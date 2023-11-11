@@ -1,0 +1,13 @@
+{
+    "domain":"http://localhost:3000",
+    "mongodb":{
+        "server":"cluster0.nzobcjm.mongodb.net",
+        "username":"data2",
+        "password":"data2",
+        "dbname":"TEST2"
+    },
+    "address_trc_hot1":{
+        "PrivateKey": "a2d9c076a84f2f54439c8f96e9a057e5a6b0b1efbf4ff3ef4da5149b6eca6a28",
+        "Address": "TEqtynwRZok9qvoRv2QHvhPm5HsTVeFsdq"
+    }
+}

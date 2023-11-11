@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Options</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+            flex-direction: column; /* Stack vertically */
+        }
+        .header h1, .header h2 {
+            margin: 0.5em 0; /* Spacing between header elements */
+        }
+        .header h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .header h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .button-container {
+            width: 100%; /* Full width */
+            max-width: 300px; /* Maximum width of buttons */
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%; /* Make buttons expand to container width */
+        }
+        .button-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .icon-circle {
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .button-text {
+            font-size: 16px;
+            color: #333;
+        }
+        .button-subtext {
+            font-size: 12px;
+            color: #666;
+        }
+        .icon {
+            font-size: 24px; /* Tăng kích thước biểu tượng lên một chút */
+            color: #4b0082; /* Màu xanh tím đậm */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Hi~</h1>
+        <h2>Welcome to PENNY Wallet!</h2>
+    </div>
+    <div class="button-container">
+        <!-- Nút bấm để tạo ví mới -->
+        <button class="button" onclick="location.href='/new-wallet';">
+            <div class="button-icon">
+                <div class="icon-circle">
+                    <span class="icon">+</span>
+                </div>
+            </div>
+            <p class="button-text">New Wallet</p>
+        </button>
+
+        <!-- Nút bấm để thêm ví hiện có -->
+        <button class="button" onclick="location.href='/import-wallet';">
+            <div class="button-icon">
+                <div class="icon-circle">
+                    <span class="icon">↓</span>
+                </div>
+            </div>
+            <p class="button-text">Import Wallet</p>
+        </button>
+    </div>
+</body>
+</html>

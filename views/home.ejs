@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallet Interface</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+  }
+  .wallet-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .balance {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .balance-amount {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .currency {
+  display: block; /* Hoặc flex nếu bạn muốn giữ các items cạnh nhau */
+  margin: 0; /* Loại bỏ margin mặc định */
+  padding: 0; /* Loại bỏ padding mặc định */
+  list-style-type: none; /* Loại bỏ bullet points */
+}
+
+.currency-button {
+  display: flex;
+  justify-content: start; /* Đặt nội dung sang trái */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.currency-symbol {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px; /* Tạo khoảng cách giữa logo và chữ */
+}
+
+.currency-name {
+  margin-right: auto; /* Đẩy tất cả nội dung còn lại sang phải */
+  font-size: 1.6em; /* Tăng kích thước font */
+  font-weight: bold; /* Làm đậm chữ */
+}
+.currency-name1 {
+  margin-right: auto; /* Đẩy tất cả nội dung còn lại sang phải */
+  font-size: 1.5em; /* Tăng kích thước font */
+  font-weight: normal; /* Làm đậm chữ */
+}
+
+
+.currency-value {
+  font-size: 1.5em; /* Tăng kích thước font */
+  font-weight: bold; /* Làm đậm chữ */
+}
+
+  .send { background-color: #007bff; }
+  .Receive { background-color: #007bff; }
+  .currency-list {
+    list-style: none;
+    padding: 0;
+  }
+  .Logout {
+    list-style: none;
+    padding: 0;
+  }
+  ul.Setting {
+    margin-top: 60px; /* Space above the ul */
+    margin-bottom: 30px; /* Space below the ul */
+    }
+  .Setting {
+    list-style: none;
+    padding: 0;
+  }
+  ul.Logout {
+    margin-top: 30px; /* Space above the ul */
+    margin-bottom: 30px; /* Space below the ul */
+    }
+  .currency {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  .currency-symbol {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="wallet-container">
+  <div class="balance">
+    <div>Total balance</div>
+    <div class="balance-amount">$0.00</div>
+    <h4><%= address %></h4> <!-- Hiển thị chuỗi string truyền từ home.js -->
+  </div>
+  <div class="button-group">
+    <button class="button send">Send</button>
+    <button class="button Receive">Receive</button>
+  </div>
+</div>
+
+<ul class="currency-list">
+    <li class="currency">
+        <button class="currency-button trx" onclick="handleCurrencyClick('TRX')">
+          <img src="/png/trx.png" alt="TRX Symbol" class="currency-symbol trx" />
+          <span class="currency-name">TRX</span>
+          <span class="currency-value"><%= TRXBalance %></span>
+        </button>
+    </li>
+  
+  <li class="currency">
+    <button class="currency-button usdt" onclick="handleCurrencyClick('USDT')">
+      <img src="/png/usdtlogo.png" alt="USDT Symbol" class="currency-symbol usdt" />
+      <span class="currency-name">USDT</span>
+      <span class="currency-value"><%= USDTBalance %></span>
+    </button>
+  </li>
+
+</ul>
+
+<ul class="Setting">
+  <li class="currency">
+    <button class="currency-button Setting" onclick="handleCurrencyClick('Setting')">
+        <img src="/png/setting.png" alt="Setting Symbol" class="currency-symbol Setting" />
+        <span class="currency-name1">Settings</span>
+      <span class="currency-value">></span>
+    </button>
+  </li>
+  
+</ul>
+<ul class="Logout">
+    <li class="currency">
+      <button class="currency-button Logout" onclick="location.href='/logout';">
+          <img src="/png/logout.png" alt="Logout Symbol" class="currency-symbol Logout" />
+          <span class="currency-name1">Log Out</span>
+        <span class="currency-value">></span>
+      </button>
+    </li>
+</ul>
+
+
+<script>
+    // JavaScript code could go here to handle button clicks or update balances.
+    var data = "<%= address %>";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create New Wallet</title>
+<style>
+  /* Styling for label, small text, and button */
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* Larger styling for input fields */
+  input[type="text"], input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  /* Smaller text for the password note */
+  .password-note {
+    font-size: 12px; /* Smaller font size */
+    margin-bottom: 5px;
+  }
+
+  /* Center the title and the button */
+  h1, .button-container {
+    text-align: center;
+  }
+
+  /* Enlarge and bold the submit button */
+  button {
+    padding: 15px 20px; /* Larger padding for a bigger button */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Change cursor on hover */
+    margin: 0 auto; /* Center the button */
+    display: block; /* Necessary to apply margin auto */
+  }
+</style>
+</head>
+<body>
+
+<h1>New Wallet</h1>
+
+<form id="walletForm" action="/your-post-url" method="POST">
+  <label for="walletName">Name</label>
+  <input type="text" id="walletName" name="walletName" placeholder="Penny Wallet" required>
+
+  <label for="password">Set a Password</label>
+  <input type="password" id="password" name="password" placeholder="Enter a password" required>
+
+  <label for="confirmPassword">Reenter Password</label>
+  <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter your password again" required>
+
+  <span id="passwordError" style="display:none;color:red;"></span>
+
+  <div class="button-container">
+    <button type="submit">Create Wallet</button>
+  </div>
+</form>
+
+<script>
+  // Your existing JavaScript code for password validation
+</script>
+
+</body>
+</html>
